@@ -2,7 +2,6 @@
 
 let renderer = {
     cells: {},
-    score: document.getElementById('score'),
     renderMap(rowsCount, colsCount) {
         let table = document.getElementById('game');
         table.innerText = '';
@@ -19,10 +18,11 @@ let renderer = {
                 this.cells[`x${col}_y${row}`] = td;
             }
         }
+        let score = document.getElementById('score');
+        score.innerHTML = `Score: 0`;
     },
 
-    render(snakePointArray, foodPoint, scorePoint) {
-        this.score.innerText = `Score: ${scorePoint}`;
+    render(snakePointArray, foodPoint) {
         for (let key of Object.getOwnPropertyNames(this.cells)) {
             this.cells[key].className = 'cell';
         }

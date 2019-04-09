@@ -1,9 +1,10 @@
 "use strict";
 let snake = {
-    settings,
+    settings: settingModule(),
     body: null,
     direction: null,
     lastStepDirection: null,
+    score: document.getElementById('score'),
 
     init(startPoint, direction) {
         this.body = [startPoint];
@@ -16,16 +17,16 @@ let snake = {
 
         switch (this.direction) {
             case 'up':
-                if(firstPoint.y <= 0) firstPoint.y = this.settings.rowsCount - 1;
+                if(firstPoint.y <= 0) firstPoint.y = this.settings.rowsCount() - 1;
                 return {x: firstPoint.x, y: firstPoint.y - 1};
             case 'down':
-                if(firstPoint.y >= this.settings.rowsCount - 1) firstPoint.y = 0;
+                if(firstPoint.y >= this.settings.rowsCount() - 1) firstPoint.y = 0;
                 return {x: firstPoint.x, y: firstPoint.y + 1};
             case 'right':
-                if(firstPoint.x >= this.settings.colsCount - 1) firstPoint.x = 0;
+                if(firstPoint.x >= this.settings.colsCount() - 1) firstPoint.x = 0;
                 return {x: firstPoint.x + 1, y: firstPoint.y};
             case 'left' :
-                if(firstPoint.x <= 0) firstPoint.x = this.settings.colsCount - 1;
+                if(firstPoint.x <= 0) firstPoint.x = this.settings.colsCount() - 1;
                 return {x: firstPoint.x - 1, y: firstPoint.y};
         }
     },
@@ -46,6 +47,7 @@ let snake = {
         let lastBodyPoint = this.body[lastBodyIdx];
         let lastBodyPointClone = Object.assign({}, lastBodyPoint);
         this.body.push(lastBodyPointClone);
+        this.score.innerHTML = `Score: ${this.body.length - 1}`;
     },
 
     setDirection(direction) {

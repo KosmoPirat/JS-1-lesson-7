@@ -1,12 +1,12 @@
 "use strict";
 
 let game = {
-    settings,
     renderer,
     snake,
-    food,
     tickInterval: null,
-    status,
+    settings: settingModule(),
+    status: statusModule(),
+    food: foodModul(),
 
     init(userSettings = {}) {
         Object.assign(this.settings, userSettings);
@@ -15,12 +15,13 @@ let game = {
             return;
         }
 
-        this.renderer.renderMap(this.settings.rowsCount, this.settings.colsCount);
+        this.renderer.renderMap(this.settings.rowsCount(), this.settings.colsCount());
 
         this.setEventHandlers();
 
         this.snake.init(this.getStartSnakePoint(), 'up');
-        this.food.setFoodCoordinates(this.getRandomCoordinates());
+        this.food.setFoodCoordinates(this.getRandomCoordinates())
+        //s.food.setFoodCoordinates(this.getRandomCoordinates());
 
         this.reset();
     },
@@ -33,7 +34,7 @@ let game = {
     },
 
     render() {
-        this.renderer.render(this.snake.body, this.food.getFoodCoordinates(), this.snake.body.length - 1);
+        this.renderer.render(this.snake.body, this.food.getFoodCoordinates());
     },
 
     play() {
@@ -61,7 +62,7 @@ let game = {
     },
 
     isGameWon() {
-        return this.snake.body.length >= this.settings.winLength;
+        return this.snake.body.length > this.settings.winLength;
     },
 
     finish() {
@@ -81,8 +82,8 @@ let game = {
 
     getStartSnakePoint() {
         return {
-            x: Math.floor(this.settings.colsCount / 2),
-            y: Math.floor(this.settings.rowsCount / 2)
+            x: Math.floor(this.settings.colsCount() / 2),
+            y: Math.floor(this.settings.rowsCount() / 2)
         }
     },
 
@@ -97,8 +98,8 @@ let game = {
 
         while(true) {
             let rndPoint = {
-                x: Math.floor(Math.random() * this.settings.colsCount),
-                y: Math.floor(Math.random() * this.settings.rowsCount),
+                x: Math.floor(Math.random() * this.settings.colsCount()),
+                y: Math.floor(Math.random() * this.settings.rowsCount()),
             };
 
             let excludeContainsRndPoint = exclude.some(function (elem) {
