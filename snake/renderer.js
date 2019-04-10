@@ -18,8 +18,6 @@ let renderer = {
                 this.cells[`x${col}_y${row}`] = td;
             }
         }
-        let score = document.getElementById('score');
-        score.innerHTML = `Score: 0`;
     },
 
     render(snakePointArray, foodPoint) {
