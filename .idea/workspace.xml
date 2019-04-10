@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ebbe48e-6b09-4802-920e-5bbd75c69459" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/task_8-2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake/food.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake/food.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake/renderer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake/settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake/snake.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake/snake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake/status.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task_8-2.js" beforeDir="false" afterPath="$PROJECT_DIR$/task_8-2.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -90,8 +82,8 @@
       <file leaf-file-name="task_8-2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/task_8-2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+            <state relative-caret-position="399">
+              <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -209,12 +201,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554452495315</updated>
       <workItem from="1554452496881" duration="12944000" />
-      <workItem from="1554727401753" duration="16562000" />
+      <workItem from="1554727401753" duration="20806000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29506000" />
+    <option name="totallyTimeSpent" value="33750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -378,8 +370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/task_8-2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="399">
+          <caret line="32" column="22" lean-forward="true" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
         </state>
       </provider>
     </entry>
