@@ -4,6 +4,7 @@ let game = {
     renderer,
     snake,
     tickInterval: null,
+    score: scoreModule(),
     settings: settingModule(),
     status: statusModule(),
     food: foodModul(),
@@ -14,20 +15,21 @@ let game = {
         if( !this.settings.validate()) {
             return;
         }
-
+        this.score.init();
         this.renderer.renderMap(this.settings.rowsCount(), this.settings.colsCount());
 
         this.setEventHandlers();
 
         this.snake.init(this.getStartSnakePoint(), 'up');
-        this.food.setFoodCoordinates(this.getRandomCoordinates())
-        //s.food.setFoodCoordinates(this.getRandomCoordinates());
+        this.food.setFoodCoordinates(this.getRandomCoordinates());
+        //this.food.setFoodCoordinates(this.getRandomCoordinates());
 
         this.reset();
     },
 
     reset() {
         this.stop();
+        this.score.drop();
         this.snake.init(this.getStartSnakePoint(), 'up');
         this.food.setFoodCoordinates(this.getRandomCoordinates());
         this.render();
@@ -51,6 +53,7 @@ let game = {
 
         if(this.food.isFoodPoint(this.snake.getNextStepHeadPoint())) {
             this.snake.incrementBody();
+            this.score.increment();
             this.food.setFoodCoordinates(this.getRandomCoordinates());
             if(this.isGameWon()) {
                 this.finish();

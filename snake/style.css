@@ -55,10 +55,14 @@ td.cell {
     background: #7c7c7c;
 }
 
-#score {
+.score {
     font-family: Arial;
     color: white;
     font-size: 16px;
     display: flex;
     justify-content: center;
+}
+
+.score span {
+    padding-left: 5px;
 }

@@ -4,7 +4,6 @@ let snake = {
     body: null,
     direction: null,
     lastStepDirection: null,
-    score: document.getElementById('score'),
 
     init(startPoint, direction) {
         this.body = [startPoint];
@@ -47,7 +46,6 @@ let snake = {
         let lastBodyPoint = this.body[lastBodyIdx];
         let lastBodyPointClone = Object.assign({}, lastBodyPoint);
         this.body.push(lastBodyPointClone);
-        this.score.innerHTML = `Score: ${this.body.length - 1}`;
     },
 
     setDirection(direction) {
